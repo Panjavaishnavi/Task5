@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Optimized Portfolio</title>
+
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #0077b6;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 32px;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #0077b6;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    nav a:hover {
+      color: #ffb703;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    section {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    section h2 {
+      font-size: 30px;
+      color: #0077b6;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    /* Portfolio Section */
+    .portfolio {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .portfolio-item {
+      width: 30%;
+      background-color: #caf0f8;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .portfolio-item h3 {
+      font-size: 24px;
+      color: #023047;
+      margin-top: 10px;
+    }
+
+    /* Contact Form */
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .contact-form button {
+      padding: 12px 20px;
+      background-color: #023047;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #0077b6;
+    }
+
+    /* Lazy Loading */
+    .lazy {
+      display: block;
+      margin: auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .portfolio-item {
+        width: 48%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .portfolio-item {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <!-- Minified JS Libraries for Performance -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js" async></script>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate web developer skilled in HTML, CSS, JavaScript, and React. I love creating interactive, dynamic, and responsive web apps.
+      </p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="projects">
+      <h2>My Projects</h2>
+      <div class="portfolio">
+        <div class="portfolio-item">
+          <img data-src="https://via.placeholder.com/600x400" class="lazy" alt="Project 1" />
+          <h3>Project 1</h3>
+          <p>A simple portfolio website using HTML, CSS, and JavaScript.</p>
+        </div>
+        <div class="portfolio-item">
+          <img data-src="https://via.placeholder.com/600x400" class="lazy" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>A dynamic to-do list app with localStorage functionality.</p>
+        </div>
+        <div class="portfolio-item">
+          <img data-src="https://via.placeholder.com/600x400" class="lazy" alt="Project 3" />
+          <h3>Project 3</h3>
+          <p>Responsive website with API integration and advanced CSS techniques.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    // Basic form validation
+    const form = document.querySelector('.contact-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Your message has been sent!');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
